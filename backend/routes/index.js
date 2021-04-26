@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const portfolio = require('./portfolio');
 
 router.get('/', (req, res) => {
@@ -8,6 +9,6 @@ router.get('/', (req, res) => {
 });
 
 
-router.use('/portfolio', portfolio)
+router.use('/portfolio', portfolio);
 
 module.exports = router;
