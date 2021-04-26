@@ -1,0 +1,29 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Portfólio - Projeto completo com o back end e front end",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonMangueira/Portfolio.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Node.js",
+    "React.js",
+    "Express",
+    "Fullstack"
+  ],
+  "author": "Ramon Mangueira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamonMangueira/Portfolio/issues"
+  },
+  "homepage": "https://github.com/RamonMangueira/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
