@@ -1,28 +1,43 @@
+const Portfolio = require('../models/Portfolio');
+
 const router = require('express').Router();
+require('../models/Portfolio');
 
 
-router.get('/', (req, res) => {
-    const data = [{
-        id: 1,
-        name: "my first project!",
-        createdAT: '2020-01-25'
-    },
-    {
-        id: 2,
-        name: "my second project!!",
-        createdAT: '2020-03-10'
-    },
-    {
-        id: 3,
-        name: "my other project!!!",
-        createdAT: '2021-04-18'
+router.get('/', async (req, res) => {
+    try{
+        const portfolio = await Portfolio.find();
+
+       res.json({
+            success: true,
+            data: portfolio
+        }); 
+    }catch(err){
+        res.json({
+            success: false,
+            message: err
+        })
     }
-    ];
-    res.json({
-        'success': true,
-        data: data
-    })
-});
+})
 
+router.post('/', async (req, res) => {
+    const portfolio = new Portfolio({
+        title: req.body.title,
+        description: req.body.description
+    });
+
+    try{
+        const savedPortfolio = await portfolio.save()
+        res.json({
+            success: true,
+            data: savedPortfolio
+        })
+    }catch(err){
+        res.json({
+            success: false,
+            message: err
+        })
+    }
+});
 
 module.exports = router
