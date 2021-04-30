@@ -67,16 +67,17 @@ router.patch('/:slug', async (req, res) => {
             slug: req.params.slug
         },
         {
-            $set:{
-                title: req.params.title,
-                description: req.params.description
+            $set: {
+                title: req.body.title,
+                description: req.body.description,
             }
         })
+
         res.json({
             success: true,
             updated: updatedPortfolio.nModified
         })
-    }catch(err){
+    } catch(err){
         res.json({
             success: false,
             message: err
