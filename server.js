@@ -5,7 +5,12 @@ require('dotenv').config();
 const app = express();
 const api = require('./backend/routes');
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json()); comando depreciado
+app.use(express.urlencoded({
+    extended: true
+  }));
+app.use(express.json());
+//acima temos a resolução do problema com o bodyParser
 
 //ROTA PRINCIPAL
 app.get('/', (req, res) => {
