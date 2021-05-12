@@ -4,7 +4,9 @@
   "description": "Portfólio - Projeto completo com o back end e front end",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "backend": "nodemon server.js",
+    "frontend": "cd frontend && yarn start",
+    "dev": "concurrently \"nodemon server.js\" \"npm run frontend\" ",
     "start": "node server.js"
   },
   "repository": {
@@ -26,6 +28,7 @@
   "homepage": "https://github.com/RamonMangueira/Portfolio#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^6.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
