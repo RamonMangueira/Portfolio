@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// Import icons
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { faLaptopCode, faGraduationCap, faImages, faImage } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { About, Description, Image } from '../styles'
 
 const ServicesSection = () => {
@@ -9,39 +14,39 @@ const ServicesSection = () => {
             <Image>
             <img src='https://sucodemanga.com.br/wp-content/uploads/2018/09/anime-sad-thumb.jpg'></img>
             </Image>
-            <Description>
+            <ServiceDescription>
                 <h2>Coisas que eu faço</h2>
                 <Cards>
                     <Card>
                         <div className="icon">
-                            Icone
+                        <FontAwesomeIcon icon={faLaptopCode} size='4x'/>
                             <h3>Portfolio</h3>
                         </div>
                         <p>Veja meus trabalhos no meu portfolio</p>
                     </Card>
                     <Card>
                         <div className="icon">
-                            Icone
-                            <h3>Portfolio</h3>
+                        <FontAwesomeIcon icon={faGraduationCap} size='4x'/>
+                            <h3>Cursos</h3>
                         </div>
                         <p>Veja meus trabalhos no meu portfolio</p>
                     </Card>
                     <Card>
                         <div className="icon">
-                            Icone
-                            <h3>Portfolio</h3>
+                        <FontAwesomeIcon icon={faImages} size='4x'/>
+                            <h3>Hobbies</h3>
                         </div>
                         <p>Veja meus trabalhos no meu portfolio</p>
                     </Card>
                     <Card>
                         <div className="icon">
-                            Icone
-                            <h3>Portfolio</h3>
+                        <FontAwesomeIcon icon={faGithubSquare} size='4x'/>
+                            <h3>Github</h3>
                         </div>
                         <p>Veja meus trabalhos no meu portfolio</p>
                     </Card>
                 </Cards>
-            </Description>
+            </ServiceDescription>
         </Services>
     )
 }
@@ -54,6 +59,9 @@ const Services = styled(About)`
         width: 70%;
         padding: 2rem 0rem 4rem 0rem;
     }
+`
+const ServiceDescription = styled(Description)`
+    flex: 2;
 `
 
 const Cards = styled.div`
